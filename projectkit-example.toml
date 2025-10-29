@@ -1,0 +1,21 @@
+name = "my-backend"
+version = "0.1.0"
+
+[features]
+auth = true
+storage = true
+database = true
+
+# Primitive configurations
+[auth]
+adapter = "jwt" # jwt | oauth | sso | custom
+secret = "supersecret"
+expiry = 3600
+
+[storage]
+adapter = "s3"  # s3 | gcs | local
+bucket = "my-bucket"
+
+[database]
+adapter = "prisma"  # prisma | diesel | sqlx
+url = "postgres://user:pass@localhost:5432/dbname"
