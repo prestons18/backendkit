@@ -19,7 +19,7 @@ pub mod database {
     }
 }
 
-pub fn init_all() {
+pub fn init() {
     #[cfg(feature = "auth")]
     auth::init();
 

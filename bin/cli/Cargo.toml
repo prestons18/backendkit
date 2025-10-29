@@ -4,6 +4,8 @@ version = "0.1.0"
 edition.workspace = true
 
 [dependencies]
-backendkit-core = { path = "../../crates/core" }
+backendkit_core = { path = "../../crates/core" }
+backendkit_config = { path = "../../crates/config" }
+
 clap = "4.5.51"
 clap_derive = "4.5.49"
