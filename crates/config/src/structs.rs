@@ -1,42 +1,37 @@
 use serde::Deserialize;
 
 #[derive(Deserialize)]
-#[allow(dead_code)]
 pub struct BackendKitConfig {
-    name: String,
-    version: String,
-    features: Features,
-    auth: Option<AuthConfig>,
-    storage: Option<StorageConfig>,
-    database: Option<DatabaseConfig>,
+    pub name: String,
+    pub version: String,
+    pub features: Features,
+    pub auth: Option<AuthConfig>,
+    pub storage: Option<StorageConfig>,
+    pub database: Option<DatabaseConfig>,
 }
 
 #[derive(Deserialize)]
-#[allow(dead_code)]
 pub struct Features {
-    auth: bool,
-    storage: bool,
-    database: bool,
+    pub auth: bool,
+    pub storage: bool,
+    pub database: bool,
 }
 
 #[derive(Deserialize)]
-#[allow(dead_code)]
 pub struct AuthConfig {
-    adapter: String,
-    secret: String,
-    expiry: u64,
+    pub adapter: String,
+    pub secret: String,
+    pub expiry: u64,
 }
 
 #[derive(Deserialize)]
-#[allow(dead_code)]
 pub struct StorageConfig {
-    adapter: String,
-    bucket: String,
+    pub adapter: String,
+    pub bucket: String,
 }
 
 #[derive(Deserialize)]
-#[allow(dead_code)]
 pub struct DatabaseConfig {
-    adapter: String,
-    url: String,
+    pub adapter: String,
+    pub url: String,
 }
