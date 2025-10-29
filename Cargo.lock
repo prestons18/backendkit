@@ -3,11 +3,18 @@
 version = 4
 
 [[package]]
-name = "config"
+name = "backendkit-config"
 version = "0.1.0"
 dependencies = [
  "serde",
  "toml",
+]
+
+[[package]]
+name = "backendkit-core"
+version = "0.1.0"
+dependencies = [
+ "backendkit-config",
 ]
 
 [[package]]
