@@ -1,14 +1,31 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+#[cfg(feature = "auth")]
+pub mod auth {
+    pub fn init() {
+        println!("Auth module initialized");
+    }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+#[cfg(feature = "storage")]
+pub mod storage {
+    pub fn init() {
+        println!("Storage module initialized");
     }
+}
+
+#[cfg(feature = "database")]
+pub mod database {
+    pub fn init() {
+        println!("Database module initialized");
+    }
+}
+
+pub fn init_all() {
+    #[cfg(feature = "auth")]
+    auth::init();
+
+    #[cfg(feature = "storage")]
+    storage::init();
+
+    #[cfg(feature = "database")]
+    database::init();
 }
